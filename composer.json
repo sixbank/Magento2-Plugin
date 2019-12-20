@@ -1,0 +1,30 @@
+{
+    "name": "sixbank/gateway",
+    "description": "Magento 2 Transparent Payment Module / Gateway Transparente para Magento 2",
+    "type": "magento2-module",
+    "license": "GPL-3.0-or-later",
+    "version": "2.3.2",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sixbank\\Gateway\\": ""
+        }
+    },
+    "require": {
+        "ext-curl": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-mbstring": "*",
+        "ext-simplexml": "*",
+        "brunopaz/php-sdk-gateway": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "SixBank",
+            "email": ""
+        }
+    ]
+}
