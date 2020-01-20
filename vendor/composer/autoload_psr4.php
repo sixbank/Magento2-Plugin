@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Sixbank\\Gateway\\' => array($baseDir . '/'),
-    'Gateway\\' => array($vendorDir . '/brunopaz/php-sdk-gateway/src'),
+    'Gateway\\API\\' => array($vendorDir . '/sixbank/php-sdk-gateway/src/gateway/API'),
 );

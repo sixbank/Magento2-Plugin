@@ -79,7 +79,7 @@
          */
         public function setTokenCard($tokenCard)
         {
-            $this->tokenCard = (string)$tokenCard;
+            $this->tokenCard = (string) $tokenCard;
             return $this;
         }
 

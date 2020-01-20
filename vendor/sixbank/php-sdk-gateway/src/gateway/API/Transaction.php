@@ -61,6 +61,10 @@
         private $fraudData;
 
 
+
+
+
+
         /**
          * Transaction constructor.
          */
@@ -157,6 +161,13 @@
         {
             $this->payment = new Payment();
             $this->payment->setAmount($this->getOrder()->getTotalAmount());
+
+            if(isset($this->split)){
+
+                $this->payment->setSplit($this->split);
+
+            }
+
             return $this->payment;
         }
 

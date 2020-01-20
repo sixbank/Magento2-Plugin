@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Gateway\\API\\' => array($vendorDir . '/sixbank/php-sdk-gateway/src/gateway/API'),
 );

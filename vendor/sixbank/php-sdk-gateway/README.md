@@ -5,7 +5,7 @@ Modalidades de pagamentos:
 - Cartão de débito
 - Paypal Plus
 - Paypal Express Chekout
-- Gateway
+- Pagseguro
 - Boleto bancário (Bradesco Shop Fácil e Itaú Shopline)
 - Transferência eletronica bancária (Itaú Shopline)
 
@@ -16,6 +16,10 @@ Recursos disponíveis
 - Tokenização de cartões
 
 ---
+## Instalação via Composer
+```
+composer require sixbank/php-sdk-gateway
+```
 
 ## Cartão de crédito (Exemplo) 
 ```php
@@ -39,7 +43,7 @@ Recursos disponíveis
 
         // Set PAYMENT
         $transaction->Payment()
-            ->setAcquirer(Acquirers::CIELO_V3)
+            ->setAcquirer(Acquirers::SIXBANK)
             ->setMethod(Methods::CREDIT_CARD_INTEREST_BY_ISSUER)
             ->setCurrency(Currency::BRAZIL_BRAZILIAN_REAL_BRL)
             ->setCountry("BRA")
@@ -174,7 +178,7 @@ $transaction->Customer()
 
 // Set PAYMENT
 $transaction->Payment()
-    ->setAcquirer(Acquirers::CIELO_V3)
+    ->setAcquirer(Acquirers::SIXBANK)
     ->setMethod(Methods::CREDIT_CARD_INTEREST_BY_ISSUER)
     ->setCurrency(Currency::BRAZIL_BRAZILIAN_REAL_BRL)
     ->setCountry("BRA")
@@ -243,10 +247,10 @@ $response = $gateway->Rebill($transaction);
 |CIELO V3.0 (recente)|Acquirers::CIELO_V3|                    
 |REDE KOMERCI WEBSERVICE|Acquirers::REDE_KOMERCI_WEBSERVICE|     
 |REDE: E-REDE (recente)|Acquirers::REDE_E_REDE|                 
-|GATEWAY|Acquirers::GATEWAY|                   
+|PAGSEGURO|Acquirers::PAGSEGURO|                   
 |PAYPAL: EXPRESS CHECKOUT|Acquirers::PAYPAL_EXPRESS_CHECKOUT|     
 |PAYPAL: PLUS|Acquirers::PAYPAL_PLUS|                 
-|GATEWAY: CHECKOUT EXPRESSO|Acquirers::GATEWAY_CHECKOUT_EXPRESSO| 
+|PAGSEGURO: CHECKOUT EXPRESSO|Acquirers::PAGSEGURO_CHECKOUT_EXPRESSO| 
 |BRADESCO (deprecado)|Acquirers::BRADESCO|                    
 |BRADESCO: SHOPFACIL (recente)|Acquirers::BRADESCO_SHOPFACIL|          
 |ITAU: SHOPLINE|Acquirers::ITAU_SHOPLINE|               

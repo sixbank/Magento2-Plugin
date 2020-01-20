@@ -4,30 +4,33 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "13ce9b5c6d94683943ed2d435004c111",
+    "content-hash": "63376107c7f995a3f0df72fe5122eac9",
     "packages": [
         {
-            "name": "brunopaz/php-sdk-gateway",
-            "version": "v1.0.11",
+            "name": "sixbank/php-sdk-gateway",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/brunopazz/gateway.git",
-                "reference": "f062279a761ae0837634b31c9bed647514069729"
+                "url": "https://github.com/sixbank/SDK-PHP.git",
+                "reference": "5c5588ee242df9c1722420532b18fc2796b4ea74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brunopazz/gateway/zipball/f062279a761ae0837634b31c9bed647514069729",
-                "reference": "f062279a761ae0837634b31c9bed647514069729",
+                "url": "https://api.github.com/repos/sixbank/SDK-PHP/zipball/5c5588ee242df9c1722420532b18fc2796b4ea74",
+                "reference": "5c5588ee242df9c1722420532b18fc2796b4ea74",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": ">=5.4.0"
+                "php": ">=7.2"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Gateway\\": "src/"
+                    "Gateway\\API\\": "src/gateway/API/"
+                },
+                "psr-0": {
+                    "Gateway\\API\\": "src/gateway/API"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -36,12 +39,12 @@
             ],
             "authors": [
                 {
-                    "name": "Bruno Paz",
-                    "email": "brunopaz@gmail.com"
+                    "name": "SixBank",
+                    "email": "developer@sixbank.net"
                 }
             ],
             "description": "SDK PHP for Gateway",
-            "time": "2019-08-13T12:48:40+00:00"
+            "time": "2019-10-09T17:37:25+00:00"
         }
     ],
     "packages-dev": [],

@@ -17,9 +17,9 @@ abstract class Acquirers
     public const REDE_KOMERCI_INTEGRADO      = 4;
     public const VERANCARD                   = 5;
     public const ELAVON                      = 6;
-    public const GATEWAY                   = 7;
+    public const PAGSEGURO                   = 7;
     public const PAYPAL_EXPRESS_CHECKOUT     = 8;
-    public const GATEWAY_CHECKOUT_EXPRESSO = 9;
+    public const PAGSEGURO_CHECKOUT_EXPRESSO = 9;
     public const BRADESCO                    = 10;
     public const BRADESCO_SHOPFACIL          = 19;
     public const BRADESCO_SHOPFACIL_BOLETO   = 18;

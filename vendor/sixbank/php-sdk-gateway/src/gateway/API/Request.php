@@ -80,7 +80,7 @@
                 CURLOPT_SSL_VERIFYHOST => 2,
                 CURLOPT_SSL_VERIFYPEER => 0
             );
-            
+
             if ($method == 'POST') {
                 curl_setopt($curl, CURLOPT_POST, 1);
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
@@ -99,7 +99,6 @@
             } catch (Exception $e) {
                 print "ERROR1";
             }
-      
             if (curl_getinfo($curl, CURLINFO_HTTP_CODE) == 500) {
                 throw new Exception("Internal Server Error", CURLINFO_HTTP_CODE);
             }

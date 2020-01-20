@@ -1,4 +1,4 @@
-# Módulo Gateway Transparente para Magento 2
+# Módulo Gateway para Magento 2
 
 ### Instalação
  
