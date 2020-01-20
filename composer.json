@@ -19,7 +19,7 @@
         "ext-libxml": "*",
         "ext-mbstring": "*",
         "ext-simplexml": "*",
-        "brunopaz/php-sdk-gateway": "^1.0"
+        "sixbank/php-sdk-gateway": "^1.0"
     },
     "authors": [
         {
