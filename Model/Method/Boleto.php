@@ -1,13 +1,6 @@
 <?php
 namespace Sixbank\Gateway\Model\Method;
 
-foreach (glob(dirname(dirname(dirname(__FILE__)))."/vendor/brunopaz/php-sdk-gateway/src/gateway/API/*.php") as $filename)
-{	
-	//echo $filename . "<BR>";
-    require_once $filename;
-}
-
-//require('D:/xampp7/htdocs/magentoce/app/code/Sixbank/gateway/vendor/autoload.php');
 
 use \Gateway\API\Credential as Credential;
 use \Gateway\API\Environment as Environment;

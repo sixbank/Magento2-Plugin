@@ -1,12 +1,6 @@
 <?php
 namespace Sixbank\Gateway\Model;
 
-foreach (glob(dirname(dirname(__FILE__))."/vendor/brunopaz/php-sdk-gateway/src/gateway/API/*.php") as $filename)
-{   
-    //echo $filename . "<BR>";
-    require_once $filename;
-}
-
 use \Gateway\API\Credential as Credential;
 use \Gateway\API\Environment as Environment;
 use \Gateway\API\Gateway as Gateway;

@@ -2,11 +2,6 @@
 namespace Sixbank\Gateway\Controller\Ajax;
 use Magento\Framework\Controller\ResultFactory;
 
-foreach (glob(dirname(dirname(dirname(__FILE__)))."/vendor/brunopaz/php-sdk-gateway/src/gateway/API/*.php") as $filename)
-{   
-    //echo $filename . "<BR>";
-    require_once $filename;
-}
 
 use \Gateway\API\Credential as Credential;
 use \Gateway\API\Environment as Environment;
