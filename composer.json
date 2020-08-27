@@ -1,5 +1,5 @@
 {
-    "name": "sixbank/gateway",
+    "name": "sixbank/magento2",
     "description": "Magento 2 Transparent Payment Module / Gateway Transparente para Magento 2",
     "type": "magento2-module",
     "license": "GPL-3.0-or-later",
