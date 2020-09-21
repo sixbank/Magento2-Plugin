@@ -137,63 +137,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->serializer = $serializer;
 
         parent::__construct($context);
-    }
-
-    /**
-     * Returns session ID from Gateway that will be used on JavaScript methods.
-     * or FALSE on failure
-     * @return bool|string
-     */
-    public function getSessionId()
-    {
-        $url = $this->getWsUrl('sessions');
-        //@TODO Replace forbidden curl_*
-        $ch = curl_init($url);
-        $params['email'] = $this->getMerchantEmail();
-        $params['token'] = $this->getToken();   
-        $params['public_key'] = $this->getGatewayPubKey();    
-
-        //@TODO Replace curl
-        curl_setopt_array(
-            $ch,
-            array(
-                CURLOPT_POSTFIELDS      => http_build_query($params),
-                CURLOPT_POST            => count($params),
-                CURLOPT_RETURNTRANSFER  => 1,
-                CURLOPT_TIMEOUT         => 45,
-                CURLOPT_SSL_VERIFYPEER  => false,
-                CURLOPT_SSL_VERIFYHOST  => false,
-            )
-        );
-
-        $response = null;
-
-        try{
-            $response = curl_exec($ch);
-        }catch(\Exception $e){
-            return $e->getMessage();
-        }
-
-        libxml_use_internal_errors(true);
-
-        $this->authResponse = $response;
-        $xml = \simplexml_load_string($response);
-
-        if (false === $xml) {
-            //@TODO Remove curl
-            if (curl_errno($ch) > 0) {
-                $this->writeLog('Gateway API communication failure: ' . curl_error($ch));
-            } else {
-                $this->writeLog(
-                    'Authentication failed with Gateway API. Check registered email and token.
-                    Payback return: ' . $response
-                );
-            }
-            return false;
-        }
-
-        return (string)$xml->id;
-    }
+    }  
 
     public function getAuthResponse() {
         return $this->authResponse;
@@ -415,8 +359,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 'tef' => $this->scopeConfig->getValue(self::XML_PATH_PAYMENT_GATEWAY_TEF_ACTIVE)
             ),
             'flag' => $this->scopeConfig->getValue(self::XML_PATH_PAYMENT_GATEWAY_CC_FLAG),
-            'debug' => $this->isDebugActive(),
-            'GatewaySessionId' => $this->getSessionId(),
+            'debug' => $this->isDebugActive(),            
             'show_total' => $this->scopeConfig->getValue(self::XML_PATH_PAYMENT_GATEWAY_CC_SHOW_TOTAL),
             'force_installments_selection' =>
                 $this->scopeConfig->getValue(self::XML_PATH_PAYMENT_GATEWAY_CC_FORCE_INSTALLMENTS)

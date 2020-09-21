@@ -590,20 +590,6 @@ RMGateway.prototype.getGrandTotal = function(){
     });
 }
 
-RMGateway.prototype.updateSessionId = function(){
-    var url = this.setStoreUrl + 'gateway/ajax/getSessionId';
-    jQuery.ajax({
-        url: url,
-        onSuccess: function (response) {
-            var session_id = response.session_id;
-            if(!session_id){
-                console.log('Não foi possível obter a session id do Gateway. Verifique suas configurações.');
-            }
-            GatewayDirectPayment.setSessionId(session_id);
-        }
-    });
-}
-
 RMGateway.prototype.getInstallments = function(grandTotal, selectedInstallment){
     var brandName = "";
     var self = this;
